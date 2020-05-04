@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello!</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{ info }}
+    </div>
+    <script type="text/javascript">
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    info: null
+                };
+            },
+            mounted() {
+                axios
+                    .get('http://appwatersales.ru/water/public/index.php/api/products')
+                    .then(response => (this.info = response));
+            }
+        });
+
+    </script>
+</body>
+</html>
