@@ -68,19 +68,25 @@ class HomeController extends Controller
 
     public function send(Request $request)
     {
-        $data = $request->all();
-
         $product = Product::findOrFail($request->id);
-        $product->VendorCode = $request->VendorCode;
-        $product->Name = $request->Name;
-        $product->Сapacity = $request->Сapacity;
-        $product->Description = $request->Description;
-        $product->Price = $request->Price;
-        $path = $request->file('Img')->store('', 'public');
-        $product->Img = $path;
-        $product->update();
 
-        return redirect('/home');
+        if (empty($request->Img)) {
+
+            $path = $product->Img;
+        } else {
+            $path = $request->file('Img')->store('', 'public');
+        }
+
+            $product->VendorCode = $request->VendorCode;
+            $product->Name = $request->Name;
+            $product->Сapacity = $request->Сapacity;
+            $product->Description = $request->Description;
+            $product->Price = $request->Price;
+            $product->Img = $path;
+            $product->update();
+
+            return redirect('/home');
+
     }
 
     public function delete($id)

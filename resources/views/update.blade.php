@@ -24,7 +24,7 @@
                     <div class="row">
                         <div class="col-5">
                             <div class="form-group">
-                                <update></update>
+                                <update :urldata="{{json_encode($url_data)}}"></update>
                             </div>
                         </div>
                         <div class="col-4">

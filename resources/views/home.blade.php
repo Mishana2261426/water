@@ -32,7 +32,7 @@
                         <td>{{$product->Сapacity}}</td>
                         <td>{{$product->Description}}</td>
                         <td>{{$product->Price}}</td>
-                        <td><img src="../../storage/app/public/{{$product->Img}}" style="width: 100px; height: 100px"></td>
+                        <td><img src="../storage/app/public/{{$product->Img}}" style="width: 100px; height: 100px"></td>
                         <td><a href="home/delete/{{$product->id}}" class="btn btn-danger">Удалить</a></td>
                         <td><a href="home/update/{{$product->id}}" class="btn btn-warning">Обновить</a></td>
                     </tr>

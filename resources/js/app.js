@@ -22,7 +22,6 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/App.vue').default);
 Vue.component('update', require('./components/update.vue').default);
 
-
 window.Vue = require('vue')
 
 
